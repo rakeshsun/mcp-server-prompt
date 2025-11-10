@@ -31,7 +31,7 @@ def addition_prompt(defect: str) -> str:
             Step 4: Clone the repo and checkout the relevant branch.\n"
         
        """
-    ]
+
 
 
 
