@@ -22,7 +22,7 @@ def run_bd_workflow(defect: int) -> str:
     return f"Workflow for defect {defect}: [Simulated output from prompt messages]"
 
 
-def addition_prompt(defect: int) -> str:
+def addition_prompt(defect: str) -> str:
     """BD defect workflow"""
     return """
             Step 1 : Execute this workflow for BD defect #{defect}:\n\n"
@@ -32,6 +32,7 @@ def addition_prompt(defect: int) -> str:
         
        """
     ]
+
 
 
 
