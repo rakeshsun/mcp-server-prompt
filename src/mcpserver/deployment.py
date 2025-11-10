@@ -13,11 +13,14 @@ def add(a: int, b: int) -> int:
     return a + b
 
 
-@mcp.prompt(
-    title="Fix BD Defect",         
-    description="Generate a prompt that asks the model to fix a defect in an addition operation."
-)
-def addition_prompt(defect: int) -> str:
-    """Fix BD Defect"""
-    return f"Fix the defect of {defect} in the addition operation."
+@self.prompt(
+        title="Addition Defect Fix",
+        description="Generate a prompt to fix a defect in addition logic."
+    )
+    def addition_prompt(self, defect: int) -> str:
+        """BD defect"""
+        return f"Fix the defect of {defect} in the addition prompt."
+
+
+
 
