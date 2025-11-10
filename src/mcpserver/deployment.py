@@ -9,4 +9,11 @@ mcp = FastMCP("Demo")
 @mcp.tool()
 def add(a: int, b: int) -> int:
     """Add two numbers"""
+
     return a + b
+
+
+@mcp.prompt()
+def addition_prompt(defect: int) -> str:
+     """BD defect"""
+    return f"Fix the defect of {defect} in the addition prompt."
