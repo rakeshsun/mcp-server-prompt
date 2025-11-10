@@ -20,7 +20,7 @@ def run_bd_workflow(defect: int) -> str:
     messages = addition_prompt(defect)  # Call your prompt function
     # Simulate LLM response or return formatted text
     return f"Workflow for defect {defect}: [Simulated output from prompt messages]"
-)
+
 
 def addition_prompt(defect: int) -> list[base.Message]:
     """BD defect workflow"""
@@ -38,6 +38,7 @@ def addition_prompt(defect: int) -> list[base.Message]:
             f"Start with Step 1 and report progress."
         )
     ]
+
 
 
 
