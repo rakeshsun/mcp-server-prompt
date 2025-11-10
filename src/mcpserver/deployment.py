@@ -1,5 +1,6 @@
 # server.py
 from mcp.server.fastmcp import FastMCP
+from mcp.server.fastmcp.prompts import base
 
 # Create an MCP server
 mcp = FastMCP("Demo")
@@ -13,13 +14,25 @@ def add(a: int, b: int) -> int:
     return a + b
 
 
-@mcp.prompt(
-    title="Fix BD Defect",
-    description="Generate a prompt that asks the model to fix a defect in an addition operation."
-)
-def addition_prompt(defect: int) -> str:
-    """BD defect"""
-    return f" Step 1 . Go to Jira and find the defect of {defect} . Step 2 . Get the repo from Jira defect . Step 3 : Clone repo "
+@mcp.prompt(title="BD Defect Workflow")
+def addition_prompt(defect: int) -> list[base.Message]:
+    return [
+        base.SystemMessage(
+            "You are a senior software engineer. "
+            "Follow the exact steps provided. "
+            "Do NOT call any tools unless explicitly told."
+        ),
+        base.UserMessage(
+            f"Fix BD defect #{defect} using this workflow:\n\n"
+            "1. Open Jira ticket BD-{defect}\n"
+            "2. Extract repo URL\n"
+            "3. Clone and checkout branch\n"
+            "4. Reproduce bug\n"
+            "5. Fix and test\n"
+            "6. Submit PR"
+        )
+    ]
+
 
 
 
