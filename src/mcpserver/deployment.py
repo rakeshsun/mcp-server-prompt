@@ -19,7 +19,8 @@ def add(a: int, b: int) -> int:
 )
 def addition_prompt(defect: int) -> str:
     """BD defect"""
-    return f"Fix the defect of {defect} in the addition prompt."
+    return f" Step 1 . Go to Jira and find the defect of {defect} . Step 2 . Get the repo from Jira defect . Step 3 : Clone repo "
+
 
 
 
