@@ -14,10 +14,14 @@ def add(a: int, b: int) -> int:
     return a + b
 
 
-@mcp.prompt(
-    title="BD Defect Workflow",
-    description="Step-by-step guide to investigate and fix a BD defect from Jira."
+@mcp.tool()
+def run_bd_workflow(defect: int) -> str:
+    """Invoke BD Defect Workflow prompt."""
+    messages = addition_prompt(defect)  # Call your prompt function
+    # Simulate LLM response or return formatted text
+    return f"Workflow for defect {defect}: [Simulated output from prompt messages]"
 )
+
 def addition_prompt(defect: int) -> list[base.Message]:
     """BD defect workflow"""
     return [
@@ -34,6 +38,7 @@ def addition_prompt(defect: int) -> list[base.Message]:
             f"Start with Step 1 and report progress."
         )
     ]
+
 
 
 
