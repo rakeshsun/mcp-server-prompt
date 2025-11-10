@@ -22,22 +22,17 @@ def run_bd_workflow(defect: int) -> str:
     return f"Workflow for defect {defect}: [Simulated output from prompt messages]"
 
 
-def addition_prompt(defect: int) -> list[base.Message]:
+def addition_prompt(defect: int) -> str:
     """BD defect workflow"""
-    return [
-        base.SystemMessage(
-            "You are a senior DevOps engineer. Follow the workflow steps exactly. "
-            "Do not call tools or make assumptions—respond with the output of each step."
-        ),
-        base.UserMessage(
-            f"Execute this workflow for BD defect #{defect}:\n\n"
-            f"Step 1: Go to Jira and find defect {defect}. Retrieve ticket details (summary, assignee, status).\n"
-            f"Step 2: Get the repo URL from the Jira defect description.\n"
-            f"Step 3: Clone the repo and checkout the relevant branch.\n"
-            f"Step 4: Reproduce the defect and propose a fix.\n\n"
-            f"Start with Step 1 and report progress."
-        )
+    return """
+            Step 1 : Execute this workflow for BD defect #{defect}:\n\n"
+            Step 2: Go to Jira and find defect {defect}. Retrieve ticket details (summary, assignee, status).\n"
+            Step 3: Get the repo URL from the Jira defect description.\n"
+            Step 4: Clone the repo and checkout the relevant branch.\n"
+        
+       """
     ]
+
 
 
 
