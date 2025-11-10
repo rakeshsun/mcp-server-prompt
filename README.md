@@ -9,12 +9,13 @@ To install the `add_tool` MCP server, run the following command:
       "command": "uvx",
       "args": [
         "--from",
-        "git+https://github.com/henryhabib/mcpserverexample.git",
+        "git+https://github.com/rakeshsun/mcp-server-prompt.git",
         "mcp-server"
       ]
     }
   }
 }
 ```
+
 
 This will fetch and set up the `mcp-server` from the specified GitHub repository.# mcp-server-prompt
