@@ -15,7 +15,7 @@ def add(a: int, b: int) -> int:
 
 
 @mcp.tool()
-def run_bd_workflow(defect: int) -> str:
+def run_bd_workflow(defect: str) -> str:
     """Invoke BD Defect Workflow prompt."""
     messages = addition_prompt(defect)  # Call your prompt function
     # Simulate LLM response or return formatted text
@@ -31,6 +31,7 @@ def addition_prompt(defect: str) -> str:
             Step 4: Clone the repo and checkout the relevant branch.\n"
         
        """
+
 
 
 
