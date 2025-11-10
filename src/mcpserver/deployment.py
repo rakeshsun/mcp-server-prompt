@@ -1,6 +1,6 @@
 # server.py
 from mcp.server.fastmcp import FastMCP
-from mcp.server.fastmcp.prompts import base
+
 
 # Create an MCP server
 mcp = FastMCP("Demo")
@@ -38,6 +38,7 @@ def addition_prompt(defect: int) -> list[base.Message]:
             f"Start with Step 1 and report progress."
         )
     ]
+
 
 
 
